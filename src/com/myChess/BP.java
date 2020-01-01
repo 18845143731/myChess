@@ -51,7 +51,7 @@ public class BP extends ChessPiece implements MouseListener{
 	@Override
 	public void setLocation(int setsimX, int setsimY) {
 		// TODO Auto-generated method stub
-		
+		if(setsimX==CurrentsimX || setsimY==CurrentsimY)
 		if((CurrentsimY<5 && (setsimY-CurrentsimY)==1) || 
 		(CurrentsimY>=5 && ((setsimY-CurrentsimY)==1||(setsimX-CurrentsimX)==-1||(setsimX-CurrentsimX)==1))) {
 			Data.panelArray[CurrentsimX][CurrentsimY] = 0;

@@ -4,11 +4,14 @@ package com.myChess;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class BK extends ChessPiece implements MouseListener{
 	
 	private int CurrentsimX;
 	private int CurrentsimY;
+ 
+
 	public BK(int x,int y) {
 		// TODO Auto-generated constructor stub
 		init();
@@ -90,8 +93,10 @@ public class BK extends ChessPiece implements MouseListener{
 		}
 		else if (c==MouseEvent.BUTTON1 && Data.BorRRun == true) {
 				Data.lastSelectPiece.setLocation(CurrentsimX, CurrentsimY);
-				if(Data.BorRRun == false)
-					this.setVisible(false);			
+				if(Data.BorRRun == false) {
+					this.setVisible(false);
+					JOptionPane.showMessageDialog(this,"红方获胜","提示",JOptionPane.PLAIN_MESSAGE);				
+				}							
 			}
 
 	}

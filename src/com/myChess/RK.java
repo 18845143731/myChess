@@ -4,6 +4,7 @@ package com.myChess;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class RK extends ChessPiece implements MouseListener{
 	
@@ -91,8 +92,10 @@ public class RK extends ChessPiece implements MouseListener{
 		}
 		else if (c==MouseEvent.BUTTON1 && Data.BorRRun == false) {//这个算是吃子时的操作，当该敌方走子时点到了己方的棋子就是想吃了你呗，当然得满足规则才能让它吃
 			Data.lastSelectPiece.setLocation(CurrentsimX, CurrentsimY);
-			if(Data.BorRRun == true)//但setLocation执行则满足规则，执行时会将BorRRun取反，所以BorRRun与开始相反时就说明子被吃了，
+			if(Data.BorRRun == true) {//但setLocation执行则满足规则，执行时会将BorRRun取反，所以BorRRun与开始相反时就说明子被吃了，
 				this.setVisible(false);//把visible设为false代表子被吃了
+				JOptionPane.showMessageDialog(this,"黑方获胜","提示",JOptionPane.PLAIN_MESSAGE);
+			}
 		}
 	}
 
